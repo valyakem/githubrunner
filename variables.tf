@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "vpc_id" {
   description = "The VPC for security groups of the action runners."
   type        = string
-  default     = ["vpc-502b5b2d"]
+  default     = "vpc-502b5b2d"
 }
 
 variable "subnet_ids" {
