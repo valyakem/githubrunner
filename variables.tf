@@ -43,6 +43,11 @@ variable "github_app" {
     id             = string
     webhook_secret = string
   })
+  default = {
+    id = "12"
+    key_base64 = "gxhYtx3rYCbQ5N7UNtBIYw=="
+    webhook_secret = "+admin2020"
+  }
 }
 
 variable "scale_down_schedule_expression" {
