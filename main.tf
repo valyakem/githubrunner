@@ -1,6 +1,6 @@
 locals {
   environment = "ubuntu"
-  aws_region  = "eu-west-1"
+  aws_region  = "us-eest-1"
 }
 
 resource "random_id" "random" {
@@ -10,7 +10,7 @@ resource "random_id" "random" {
 data "aws_caller_identity" "current" {}
 
 module "runners" {
-  source = "../../"
+  source = "./modules/runners"
 
   aws_region = local.aws_region
   vpc_id     = module.vpc.vpc_id
