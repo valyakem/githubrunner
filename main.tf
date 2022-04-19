@@ -10,7 +10,7 @@ resource "random_id" "random" {
 data "aws_caller_identity" "current" {}
 
 module "runners" {
-  source = "./modules/runners"
+  source = "./modules/runners/"
 
   aws_region = local.aws_region
   vpc_id     = module.vpc.vpc_id
