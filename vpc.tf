@@ -1,6 +1,5 @@
 module "vpc" {
   source  = "../../"
-  version = "3.11.2"
 
   name = "vpc-${local.environment}"
   cidr = "10.0.0.0/16"
