@@ -1,8 +1,8 @@
 
 variable "github_app_key_base64" {
-    default = "YkJ0LjhzaU44N0w4UlQ/YjczdFxzYkhic3g="
+  default = "alBrYixKVyM3bDNGQzkqIzs5NHY="
 }
 
 variable "github_app_id" {
-    default = "23"
+  default = "nbrunners"
 }

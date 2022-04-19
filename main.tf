@@ -1,6 +1,6 @@
 locals {
   environment = "ubuntu"
-  aws_region  = "us-eest-1"
+  aws_region  = "us-east-1"
 }
 
 resource "random_id" "random" {
@@ -10,7 +10,7 @@ resource "random_id" "random" {
 data "aws_caller_identity" "current" {}
 
 module "runners" {
-  source = "./modules/runners/"
+  source = "./modules/runners"
 
   aws_region = local.aws_region
   vpc_id     = module.vpc.vpc_id
@@ -43,7 +43,7 @@ module "runners" {
   #
   # option 1. configure your pre-built AMI + userdata
   userdata_template = "./templates/user-data.sh"
-  ami_owners        = ["099720109477"] # Canonical's Amazon account ID
+  ami_owners        = ["440153443065"] # Canonical's Amazon account ID
 
   ami_filter = {
     name = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]

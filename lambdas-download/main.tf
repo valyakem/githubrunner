@@ -1,9 +1,9 @@
 locals {
-  version = "2.14.0"
+  version = "<REPLACE_BY_GITHUB_RELEASE_VERSION>"
 }
 
 module "lambdas" {
-  source = "./modules/download-lambda"
+  source = "../../../modules/download-lambda"
   lambdas = [
     {
       name = "webhook"
