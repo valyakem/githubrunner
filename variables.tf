@@ -1,27 +1,33 @@
 variable "aws_region" {
   description = "AWS region."
   type        = string
+  default     = "us-east-1"
 }
 
 variable "vpc_id" {
   description = "The VPC for security groups of the action runners."
   type        = string
+  default     = ["vpc-502b5b2d"]
 }
 
 variable "subnet_ids" {
   description = "List of subnets in which the action runners will be launched, the subnets needs to be subnets in the `vpc_id`."
   type        = list(string)
+  default = [ "subnet-ac0120f3", "subnet-52b39734" ]
 }
 
 variable "tags" {
   description = "Map of tags that will be added to created resources. By default resources will be tagged with name and environment."
   type        = map(string)
-  default     = {}
+  default     = {
+    "Name": "prod"
+  }
 }
 
 variable "environment" {
   description = "A name that identifies the environment, used as prefix and for tagging."
   type        = string
+  default = "prod"
 }
 
 variable "enable_organization_runners" {
