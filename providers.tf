@@ -18,7 +18,7 @@ organization = "Next-Generation-Business-IT-Solutions"
  
   
     workspaces {
-      name = "terraformudemy"
+      name = "modulestraining1"
     }
   }
 }
