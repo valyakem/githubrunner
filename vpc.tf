@@ -1,5 +1,5 @@
 module "vpc" {
-  source  = "."
+  source  = "../../"
   version = "3.11.2"
 
   name = "vpc-${local.environment}"
