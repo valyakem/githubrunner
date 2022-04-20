@@ -12,7 +12,7 @@ variable "name" {
   default     = "githubrunner-vpc"
 }
 
-variable "vp_id" {
+variable "vpc_id" {
   description = "The CIDR block for the VPC."
   default = "10.0.0.0/16"
 }
