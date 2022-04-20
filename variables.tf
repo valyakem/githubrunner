@@ -37,6 +37,10 @@ variable "availability_zones" {
   default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
 
+variable "vpcname" {
+  description = "the name of your stack, e.g. \"demo\""
+  default     = "githubrunner-vpc"
+}
 #---------------------
 variable "aws_region" {
   description = "AWS region."
