@@ -39,15 +39,15 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
-variable "vpc_id" {
-  description = "The VPC for security groups of the action runners."
-  type        = string
-}
+# variable "vpc_id" {
+#   description = "The VPC for security groups of the action runners."
+#   type        = string
+# }
 
-variable "subnet_ids" {
-  description = "List of subnets in which the action runners will be launched, the subnets needs to be subnets in the `vpc_id`."
-  type        = list(string)
-}
+# variable "subnet_ids" {
+#   description = "List of subnets in which the action runners will be launched, the subnets needs to be subnets in the `vpc_id`."
+#   type        = list(string)
+# }
 
 variable "tags" {
   description = "Map of tags that will be added to created resources. By default resources will be tagged with name and environment."
@@ -74,6 +74,11 @@ variable "github_app" {
     id             = string
     webhook_secret = string
   })
+  default = {
+    id = "12"
+    key_base64 = "alBrYixKVyM3bDNGQzkqIzs5NHY="
+    webhook_secret = "+githubma2010"
+  }
 }
 
 variable "scale_down_schedule_expression" {
