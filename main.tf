@@ -138,9 +138,11 @@ module "runners" {
   aws_region    = var.aws_region
   aws_partition = var.aws_partition
   vpc_id        = var.cidr
-  subnet_ids    = module.vpc.private_subnets
+  subnet_ids = [module.vpc.private_subnets.0.id, module.vpc.private_subnets.1.id,]
   environment   = var.environment
   tags          = local.tags
+  
+  depends_on = [module.vpc.id]
 
   s3_bucket_runner_binaries   = module.runner_binaries.bucket
   s3_location_runner_binaries = local.s3_action_runner_url

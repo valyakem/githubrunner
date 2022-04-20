@@ -13,6 +13,7 @@ variable "tags" {
 variable "environment" {
   description = "A name that identifies the environment, used as prefix and for tagging."
   type        = string
+  default = "test"
 }
 
 variable "distribution_bucket_name" {
