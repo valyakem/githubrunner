@@ -125,7 +125,7 @@ module "webhook" {
 module "vpc" {
   source             = "./modules/vpc"
   name               = var.vpcname
-  vpc_id             = var.cidr
+  # vpc_id             = var.cidr
   private_subnets    = var.private_subnets
   public_subnets     = var.public_subnets
   availability_zones = var.availability_zones
