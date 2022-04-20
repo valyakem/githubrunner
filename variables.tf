@@ -12,11 +12,6 @@ variable "name" {
   default     = "githubrunner-vpc"
 }
 
-variable "environment" {
-  description = "the name of your environment, e.g. \"prod\""
-  default     = "test"
-}
-
 variable "cidr" {
   description = "The CIDR block for the VPC."
   default = "10.0.0.0/16"
