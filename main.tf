@@ -123,7 +123,7 @@ module "webhook" {
 }
 
 module "vpc" {
-  source             = "./vpc"
+  source             = "./modules/vpc"
   name               = var.vpcname
   vpc_id               = var.vpc_id
   private_subnets    = var.private_subnets
