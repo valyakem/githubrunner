@@ -12,7 +12,7 @@ variable "name" {
   default     = "githubrunner-vpc"
 }
 
-variable "cidr" {
+variable "vp_id" {
   description = "The CIDR block for the VPC."
   default = "10.0.0.0/16"
 }
@@ -58,6 +58,7 @@ variable "tags" {
 variable "environment" {
   description = "A name that identifies the environment, used as prefix and for tagging."
   type        = string
+  default     = "test"
 }
 
 variable "enable_organization_runners" {

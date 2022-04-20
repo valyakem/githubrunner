@@ -1,11 +1,11 @@
 variable "name" {
   description = "the name of your stack, e.g. \"demo\""
-  default     = "arcablanca-vpc"
+  default     = "githubrunner-vpc"
 }
 
 variable "environment" {
   description = "the name of your environment, e.g. \"prod\""
-  default     = "prod"
+  default     = "test"
 }
 
 variable "cidr" {

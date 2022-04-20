@@ -79,16 +79,6 @@ resource "aws_sqs_queue" "queued_builds_dlq" {
   tags = var.tags
 }
 
-module "vpc" {
-  source             = "./modules/vpc"
-  name               = var.vpcname
-  cidr               = var.cidr
-  private_subnets    = var.private_subnets
-  public_subnets     = var.public_subnets
-  availability_zones = var.availability_zones
-  environment        = var.environment
-}
-
 module "ssm" {
   source = "./modules/ssm"
 
@@ -97,6 +87,8 @@ module "ssm" {
   github_app  = var.github_app
   tags        = local.tags
 }
+
+
 
 module "webhook" {
   source = "./modules/webhook"
@@ -128,6 +120,16 @@ module "webhook" {
 
   log_type  = var.log_type
   log_level = var.log_level
+}
+
+module "vpc" {
+  source             = "./vpc"
+  name               = var.vpcname
+  vpc_id               = var.vpc_id
+  private_subnets    = var.private_subnets
+  public_subnets     = var.public_subnets
+  availability_zones = var.availability_zones
+  environment        = var.environment
 }
 
 module "runners" {
