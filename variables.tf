@@ -27,6 +27,11 @@ variable "private_subnets" {
   default     = ["10.0.0.0/20", "10.0.32.0/20", "10.0.64.0/20"]
 }
 
+variable "cidr" {
+  description = "The CIDR block for the VPC."
+  default = "10.0.0.0/16"
+}
+
 variable "availability_zones" {
   description = "List of availability zones"
   default     = ["us-east-1a", "us-east-1b", "us-east-1c"]

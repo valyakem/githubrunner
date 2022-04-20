@@ -125,7 +125,7 @@ module "webhook" {
 module "vpc" {
   source             = "./modules/vpc"
   name               = var.vpcname
-  vpc_id               = var.vpc_id
+  vpc_id             = var.cidr
   private_subnets    = var.private_subnets
   public_subnets     = var.public_subnets
   availability_zones = var.availability_zones
@@ -137,7 +137,7 @@ module "runners" {
 
   aws_region    = var.aws_region
   aws_partition = var.aws_partition
-  vpc_id        = module.vpc.vpc_id
+  vpc_id        = var.cidr
   subnet_ids    = module.vpc.private_subnets
   environment   = var.environment
   tags          = local.tags
