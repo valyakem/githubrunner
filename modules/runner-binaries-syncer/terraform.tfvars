@@ -1,3 +1,3 @@
 environment              = "test"
-distribution_bucket_name = "alkj4klrj32trogjreoigfvj"
-aws_region               = "eu-west-1"
+distribution_bucket_name = "nbtechnology"
+aws_region               = "us-east-1"

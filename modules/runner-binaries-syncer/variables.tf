@@ -1,6 +1,7 @@
 variable "aws_region" {
   description = "AWS region."
   type        = string
+  default = "us-east-1"
 }
 
 variable "tags" {
@@ -17,6 +18,7 @@ variable "environment" {
 variable "distribution_bucket_name" {
   description = "Bucket for storing the action runner distribution."
   type        = string
+  default     = "nbtechnology"
 
   # Make sure the bucket name only contains legal characters
   validation {
