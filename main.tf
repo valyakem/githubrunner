@@ -79,6 +79,16 @@ resource "aws_sqs_queue" "queued_builds_dlq" {
   tags = var.tags
 }
 
+module "vpc" {
+  source             = "./modules/vpc"
+  name               = var.vpcname
+  cidr               = var.cidr
+  private_subnets    = var.private_subnets
+  public_subnets     = var.public_subnets
+  availability_zones = var.availability_zones
+  environment        = var.environment
+}
+
 module "ssm" {
   source = "./modules/ssm"
 
@@ -125,8 +135,8 @@ module "runners" {
 
   aws_region    = var.aws_region
   aws_partition = var.aws_partition
-  vpc_id        = var.vpc_id
-  subnet_ids    = var.subnet_ids
+  vpc_id        = module.vpc.vpc_id
+  subnet_ids    = module.vpc.private_subnets
   environment   = var.environment
   tags          = local.tags
 
