@@ -19,7 +19,7 @@ variable "environment" {
 variable "distribution_bucket_name" {
   description = "Bucket for storing the action runner distribution."
   type        = string
-  default     = "nbtechnology"
+  default     = "s3://nbtechnology"
 
   # Make sure the bucket name only contains legal characters
   validation {
@@ -36,7 +36,7 @@ variable "lambda_schedule_expression" {
 variable "lambda_zip" {
   description = "File location of the lambda zip file."
   type        = string
-  default     = null
+  default     = "s3://nbtechnology"
 }
 
 variable "lambda_timeout" {
@@ -101,12 +101,12 @@ variable "runner_allow_prerelease_binaries" {
 
 variable "lambda_s3_bucket" {
   description = "S3 bucket from which to specify lambda functions. This is an alternative to providing local files directly."
-  default     = null
+  default     = "s3://nbtechnology"
 }
 
 variable "syncer_lambda_s3_key" {
   description = "S3 key for syncer lambda function. Required if using S3 bucket to specify lambdas."
-  default     = null
+  default     = "SSE-S3"
 }
 
 variable "syncer_lambda_s3_object_version" {
