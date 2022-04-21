@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket         = "self-host-runner-bucket"
-    region         = "ap-northeast-1"
+    bucket         = "nbself-host-runner-bucket"
+    region         = "us-east-1"
     key            =  "terraform.tfstate"
   }
 }

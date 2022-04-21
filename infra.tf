@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "int_gateway" {
 resource "aws_subnet" "private_subnet" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = var.private_subnet_cidr[0]
-  availability_zone = "ap-northeast-1c"
+  availability_zone = "us-east-1c"
 
   tags = {
     Name = "${var.PREFIX}_private_subnet"
@@ -39,7 +39,7 @@ resource "aws_subnet" "private_subnet" {
 resource "aws_subnet" "private_subnet_db1" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = var.private_subnet_cidr[1]
-  availability_zone = "ap-northeast-1a"
+  availability_zone = "us-east-1a"
 
   tags = {
     Name = "${var.PREFIX}_private_subnet_db1"
@@ -49,7 +49,7 @@ resource "aws_subnet" "private_subnet_db1" {
 resource "aws_subnet" "private_subnet_db2" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = var.private_subnet_cidr[2]
-  availability_zone = "ap-northeast-1d"
+  availability_zone = "us-east-1d"
 
   tags = {
     Name = "${var.PREFIX}_private_subnet_db2"
@@ -60,7 +60,7 @@ resource "aws_subnet" "private_subnet_db2" {
 resource "aws_subnet" "public_subnet" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = var.public_subnet_cidr
-  availability_zone = "ap-northeast-1c"
+  availability_zone = "us-east-1c"
 
   tags = {
     Name = "${var.PREFIX}_public_subnet"
@@ -173,7 +173,7 @@ resource "aws_eip" "server_eip" {
 resource "aws_instance" "server" {
   ami                       = "ami-0f2dd5fc989207c82"
   instance_type             = "t2.micro"
-  availability_zone         = "ap-northeast-1c"
+  availability_zone         = "us-east-1a"
   key_name                  = "access-key"
 
   network_interface {
@@ -220,7 +220,7 @@ resource "aws_rds_cluster" "aurora_cluster" {
   cluster_identifier              = "${var.PREFIX}-cluster"
   engine                          = "aurora-mysql"
   engine_version                  = "5.7.mysql_aurora.2.09.1"
-  availability_zones              = ["ap-northeast-1c", "ap-northeast-1a", "ap-northeast-1d"]
+  availability_zones              = ["us-east-1c", "us-east-1a", "us-east-1d"]
   database_name                   = var.DB_NAME
   master_username                 = "root"
   master_password                 = var.DB_PASSWORD
