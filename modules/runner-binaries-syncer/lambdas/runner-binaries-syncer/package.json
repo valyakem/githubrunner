@@ -7,10 +7,10 @@
     "start": "ts-node-dev src/local.ts",
     "test": "NODE_ENV=test jest",
     "test:watch": "NODE_ENV=test jest --watch",
-    "lint": "yarn eslint src",
+    "lint": "npm run eslint src",
     "watch": "ts-node-dev --respawn --exit-child src/local.ts",
     "build": "ncc build src/lambda.ts -o dist",
-    "dist": "yarn build && cd dist && zip -r ../runner-binaries-syncer.zip index.js",
+    "dist": "npm run build && cd dist && 7z a ../runner-binaries-syncer.zip index.js",
     "format": "prettier --write \"**/*.ts\"",
     "format-check": "prettier --check \"**/*.ts\""
   },
