@@ -10,7 +10,7 @@
     "lint": "npm run eslint src",
     "watch": "ts-node-dev --respawn --exit-child src/local.ts",
     "build": "ncc build src/lambda.ts -o dist",
-    "dist": "npm run build && cd dist && zip ../runners.zip index.js",
+    "dist": "npm run build && cd dist && 7z a ../runners.zip index.js",
     "format": "prettier --write \"**/*.ts\"",
     "format-check": "prettier --check \"**/*.ts\"",
     "all": "npm run build && npm run format && npm run lint && npm run test"
