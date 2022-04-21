@@ -36,7 +36,7 @@ variable "lambda_schedule_expression" {
 variable "lambda_zip" {
   description = "File location of the lambda zip file."
   type        = string
-  default     = "s3://nbtechnology"
+  default     = "runner-binaries-syncer.zip"
 }
 
 variable "lambda_timeout" {
