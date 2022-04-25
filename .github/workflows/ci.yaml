@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - '**'
-      - '!main'
+      - 'main'
     paths-ignore:
       - 'self-host-runner-ECS/**'
 
